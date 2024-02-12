@@ -18,4 +18,4 @@ spec:
     helm:
       releaseName: myapp
       valueFiles:
-        - values.yaml
+        - newvalues.yaml
