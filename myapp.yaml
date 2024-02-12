@@ -12,9 +12,9 @@ spec:
     automated:
       prune: true
   source:
-    path: mychart
+    path: .
     repoURL: https://github.com/alangiacomin/mychart
-    targetRevision: 0.1.0
+    targetRevision: main
     helm:
       releaseName: myapp
       valueFiles:
