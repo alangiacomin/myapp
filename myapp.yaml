@@ -13,7 +13,7 @@ spec:
       prune: true
   source:
     path: mychart
-    repoURL: https://github.com/alangiacomin/mychart
+    repoURL: https://github.com/alangiacomin/mychart.git
     targetRevision: 0.1.0
     helm:
       releaseName: myapp
