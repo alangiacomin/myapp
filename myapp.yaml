@@ -4,13 +4,16 @@ metadata:
   name: myapp
   namespace: argocd
 spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
   project: default
+  syncPolicy:
+    automated:
+      prune: true
   source:
-    chart: mychart
+    path: mychart
     repoURL: https://github.com/alangiacomin/mychart
     targetRevision: 0.1.0
     helm:
       releaseName: myapp
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: default
