@@ -17,5 +17,7 @@ spec:
     targetRevision: master
     helm:
       releaseName: myapp
-      valueFiles:
-        - newvalues.yaml
+      values: |
+        nameOverride: "my new override"
+      #valueFiles:
+      #  - values.yaml
