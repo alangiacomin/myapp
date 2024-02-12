@@ -14,7 +14,7 @@ spec:
   source:
     path: .
     repoURL: https://github.com/alangiacomin/mychart
-    targetRevision: main
+    targetRevision: master
     helm:
       releaseName: myapp
       valueFiles:
