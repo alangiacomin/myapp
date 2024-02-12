@@ -12,7 +12,7 @@ spec:
     automated:
       prune: true
   source:
-    chart: mychart
+    path: mychart
     repoURL: https://github.com/alangiacomin/mychart
     targetRevision: 0.1.0
     helm:
