@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp
-  namespace: argocd
+  namespace: default
 spec:
   destination:
     server: "https://kubernetes.default.svc"
@@ -16,7 +16,6 @@ spec:
     repoURL: https://github.com/alangiacomin/mychart.git
     targetRevision: master
     helm:
+      releaseName: myapp
       valueFiles:
         - values.yaml
-    helm:
-      releaseName: myapp
