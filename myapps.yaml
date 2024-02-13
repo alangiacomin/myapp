@@ -12,12 +12,10 @@ spec:
     automated:
       prune: true
   source:
-    path: .
-    repoURL: https://github.com/alangiacomin/mychart
+    path: apps/firstapp
+    repoURL: https://github.com/alangiacomin/myapp/
     targetRevision: master
     helm:
-      releaseName: myapp
+      releaseName: firstapp
       values: |
         nameOverride: "my new override"
-      #valueFiles:
-      #  - values.yaml
