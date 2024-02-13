@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
-  namespace: argocd
+  namespace: argocd-test
 data:
   myvalue: "Ciao mondo"
   myoverride: "{{ .Values.nameOverride }}"
