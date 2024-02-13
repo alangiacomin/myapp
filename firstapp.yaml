@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: firstapp
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  source:
+    path: apps/firstapp
+    repoURL: https://github.com/alangiacomin/myapp/
+    targetRevision: master
+    helm:
+      releaseName: firstapp
+      values: |
+        nameOverride: "my new override"

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapps
+  name: secondapp
   namespace: argocd
 spec:
   destination:
@@ -16,6 +16,6 @@ spec:
     repoURL: https://github.com/alangiacomin/myapp/
     targetRevision: master
     helm:
-      releaseName: firstapp
+      releaseName: secondapp
       values: |
-        nameOverride: "my new override"
+        nameOverride: "my second override"
