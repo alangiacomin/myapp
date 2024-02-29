@@ -4,7 +4,7 @@ metadata:
   name: kube-prometheus-kube-prome-prometheus
   namespace: argocd-test
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
   - http:
       paths:
