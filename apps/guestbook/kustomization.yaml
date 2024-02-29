@@ -4,8 +4,8 @@ kind: Kustomization
 namePrefix: kustomize-
 
 resources:
-- guestbook-ui-deployment.yaml
-- guestbook-ui-svc.yaml
-- newsvc.yaml
-- networking.yaml
-- ingress-controller.yaml
+#- guestbook-ui-deployment.yaml
+#- guestbook-ui-svc.yaml
+#- newsvc.yaml
+#- networking.yaml
+#- ingress-controller.yaml
