@@ -7,5 +7,6 @@ resources:
 - guestbook-ui-deployment.yaml
 - guestbook-ui-svc.yaml
 - newsvc.yaml
+- guest2.yaml
 #- networking.yaml
 #- ingress-controller.yaml
