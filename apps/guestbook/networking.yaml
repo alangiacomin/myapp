@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kube-prometheus-kube-prome-prometheus
+  namespace: argocd-test
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: guest.cobradev.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: guestbook-ui
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - guest.cobradev.net
