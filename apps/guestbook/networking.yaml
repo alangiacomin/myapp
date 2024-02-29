@@ -6,16 +6,24 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: guest.cobradev.net
-    http:
+  - http:
       paths:
       - backend:
           service:
             name: kustomize-guestbook-ui
             port:
-              number: 80
+              number: 8010
         path: /
         pathType: ImplementationSpecific
-  tls:
-  - hosts:
-    - guest.cobradev.net
+  - http:
+      paths:
+      - backend:
+          service:
+            name: kustomize-newsvc
+            port:
+              number: 8020
+        path: /
+        pathType: ImplementationSpecific
+#  tls:
+#  - hosts:
+#    - guest.cobradev.net
