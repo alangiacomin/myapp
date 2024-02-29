@@ -8,3 +8,4 @@ resources:
 - guestbook-ui-svc.yaml
 - newsvc.yaml
 - networking.yaml
+- ingress-controller.yaml
