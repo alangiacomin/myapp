@@ -2,10 +2,8 @@ apiVersion: v1
 kind: Service	
 metadata:	
   name: newsvc
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: guest.cobradev.net
 spec:	
-  #type: "LoadBalancer"
+  type: "LoadBalancer"
   ports:	
   - port: 8020	
     targetPort: 80	
