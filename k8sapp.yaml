@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: k8s-app
+   namespace: argocd-test
+spec:
+   replicas: 1
+   template:
+      spec:
+         containers:
+            - name: k8s-app
+              image: alangiacomin/k8s-app:tagname
