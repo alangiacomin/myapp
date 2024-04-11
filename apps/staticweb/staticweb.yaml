@@ -29,5 +29,5 @@ spec:
       bb: web
    ports:
       - port: 8020
-        targetPort: 8020
+        targetPort: 80
         nodePort: 30002
