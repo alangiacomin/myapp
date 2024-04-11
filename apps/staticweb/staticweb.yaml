@@ -15,7 +15,7 @@ spec:
       spec:
          containers:
             - name: staticweb
-              image: alangiacomin/web-image:0.0.1
+              image: alangiacomin/web-image:0.0.2
 ---
 apiVersion: v1
 kind: Service
