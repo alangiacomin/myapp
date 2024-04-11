@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staticweb
+  namespace: argocd-test
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd-test
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  source:
+    path: apps/staticweb
+    repoURL: https://github.com/alangiacomin/myapp/
+    targetRevision: master
