@@ -28,6 +28,8 @@ spec:
    selector:
       bb: web
    ports:
-      - port: 80
-        targetPort: 80
+      - # porta browser
+        port: 80
+        # porta pod
+        targetPort: 8123
         #nodePort: 30001
