@@ -29,7 +29,7 @@ spec:
       bb: web
    ports:
       - # porta browser
-        port: 80
+        port: 8123
         # porta pod
         targetPort: 8123
         #nodePort: 30001
