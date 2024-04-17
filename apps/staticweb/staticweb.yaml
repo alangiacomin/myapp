@@ -23,8 +23,8 @@ metadata:
    name: staticweb-entrypoint
    namespace: argocd-test
 spec:
-   # type: NodePort
-   type: LoadBalancer
+   type: NodePort
+   # type: LoadBalancer
    selector:
       bb: web
    ports:
