@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ui
   namespace: argocd-test
 spec:	
-   type: NodePort
+  - type: NodePort
    # type: LoadBalancer
   ports:	
   - port: 8010	
