@@ -16,7 +16,7 @@ spec:
       spec:
          containers:
             - name: k8s-app
-              image: alangiacomin/k8s-app:1713907342
+              image: alangiacomin/k8s-app:1713987687
 ---
 apiVersion: v1
 kind: Service
