@@ -49,4 +49,5 @@ metadata:
   name: k8s-app-configmap
   namespace: argocd-test
 data:
-  APP_NAME: "Ciao mondo"
+  APP_NAME: "Ciao mondo"  
+  APP_ENV: production
