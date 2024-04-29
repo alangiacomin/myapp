@@ -17,6 +17,14 @@ spec:
          containers:
             - name: k8s-app
               image: alangiacomin/k8s-app:1714241034
+              volumeMounts:
+              - name: foo
+                mountPath: "/etc/foo"
+                readOnly: true
+         volumes:
+         - name: foo
+           configMap:
+             name: k8s-app-configmap
 ---
 apiVersion: v1
 kind: Service
