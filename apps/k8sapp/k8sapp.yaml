@@ -22,7 +22,7 @@ spec:
           image: alangiacomin/k8s-app:1714421837
           volumeMounts:
             - name: k8s-app-configmap
-              mountPath: /var/www/html
+              mountPath: /var/www/html/
               subPath: .env.cm
               #readOnly: true
       volumes:
