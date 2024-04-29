@@ -5,7 +5,7 @@ metadata:
   name: k8s-app
   namespace: argocd-test
   annotations:
-    configmap.reloader.stakater.com/reload: "k8s-app-configmap"
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 1
   revisionHistoryLimit: 1
