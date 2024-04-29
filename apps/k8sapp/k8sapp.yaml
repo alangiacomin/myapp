@@ -52,5 +52,5 @@ metadata:
   namespace: argocd-test
 data:
   .env.cm: |
-    APP_NAME="Ciao mondo 6"
+    APP_NAME="Ciao mondo 7"
     APP_ENV=production
