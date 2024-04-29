@@ -21,12 +21,12 @@ spec:
         - name: k8s-app
           image: alangiacomin/k8s-app:1714241034
           volumeMounts:
-            - name: env
+            - name: k8s-app-configmap
               mountPath: /var/www/html/.env
               subPath: .env
               readOnly: true
       volumes:
-        - name: env
+        - name: k8s-app-configmap
           configMap:
             name: k8s-app-configmap
 
