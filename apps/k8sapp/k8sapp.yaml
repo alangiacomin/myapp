@@ -24,7 +24,7 @@ spec:
             - name: k8s-app-configmap
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
-              #readOnly: true
+              readOnly: true
       volumes:
         - name: k8s-app-configmap
           configMap:
@@ -51,6 +51,6 @@ metadata:
   name: k8s-app-configmap
   namespace: argocd-test
 data:
-  .env.production: |
+  .env.cm: |
     APP_NAME="Ciao mondo 2"
     APP_ENV=local
