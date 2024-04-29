@@ -52,4 +52,4 @@ metadata:
 data:
   .env: |
     APP_NAME="Ciao mondo"  
-    APP_ENV=production
+    APP_ENV=local
