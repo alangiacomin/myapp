@@ -34,3 +34,11 @@ spec:
         # porta pod
         targetPort: 8123
         #nodePort: 30001
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-app-configmap
+  namespace: argocd-test
+data:
+  APP_NAME: "Ciao mondo"
