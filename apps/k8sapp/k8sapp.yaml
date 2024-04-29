@@ -52,5 +52,7 @@ metadata:
   namespace: argocd-test
 data:
   .env.cm: |
-    APP_NAME="Ciao mondo 2"
-    APP_ENV=local
+    APP_NAME="Ciao mondo 3"
+    APP_ENV=production
+    APP_DEBUG=false
+    APP_URL=http://app.cobradev.net/
