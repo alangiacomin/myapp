@@ -54,5 +54,5 @@ metadata:
     reloader: enabled
 data:
   .env.cm: |
-    APP_NAME="Ciao mondo 8"
+    APP_NAME="Ciao mondo 9"
     APP_ENV=production
