@@ -1,50 +1,49 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: k8s-app
-   namespace: argocd-test
+  name: k8s-app
+  namespace: argocd-test
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
-   replicas: 1
-   revisionHistoryLimit: 1 # Default to 10 if not specified
-   selector:
-      matchLabels:
-         bb: web
-   template:
-      metadata:
-         labels:
-            bb: web
-      spec:
-         containers:
-            - name: k8s-app
-              image: alangiacomin/k8s-app:1714241034
-              volumeMounts:
-              - name: env
-                mountPath: /var/www/html/.env
-                subPath: .env
-                readOnly: true
-         volumes:
-         - name: env
-           configMap:
-             name: k8s-app-configmap
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+        - name: k8s-app
+          image: alangiacomin/k8s-app:1714241034
+          volumeMounts:
+            - name: env
+              mountPath: /var/www/html/.env
+              subPath: .env
+              readOnly: true
+      volumes:
+        - name: env
+          configMap:
+            name: k8s-app-configmap
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-   name: k8s-app-entrypoint
-   namespace: argocd-test
+  name: k8s-app-entrypoint
+  namespace: argocd-test
 spec:
-   # type: NodePort
-   type: LoadBalancer
-   selector:
-      bb: web
-   ports:
-      - # porta browser
-        port: 80
-        # porta pod
-        targetPort: 8123
-        #nodePort: 30001
+  type: LoadBalancer
+  selector:
+    bb: web
+  ports:
+    - port: 80
+      targetPort: 8123
+
 ---
 apiVersion: v1
 kind: ConfigMap
