@@ -25,8 +25,8 @@ spec:
           image: alangiacomin/k8s-app:1714425219
           volumeMounts:
             - name: k8s-app-configmap
-              mountPath: /var/www/html/.env
-              subPath: .env
+              mountPath: /var/www/html/.env.cm
+              subPath: .env.cm
               readOnly: true
       volumes:
         - name: k8s-app-configmap
@@ -54,6 +54,6 @@ metadata:
   name: k8s-app-configmap
   namespace: argocd-test
 data:
-  .env: |
-    APP_NAME="Ciao mondo 14"
+  .env.cm: |
+    APP_NAME="Ciao mondo 20"
     APP_ENV=production
