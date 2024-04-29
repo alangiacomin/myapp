@@ -53,7 +53,7 @@ kind: ConfigMap
 metadata:
   name: k8s-app-configmap
   namespace: argocd-test
-  annotations:    
+  labels:    
     configmap-version: "2"
 data:
   .env.cm: |
