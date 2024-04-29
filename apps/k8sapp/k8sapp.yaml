@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -50,8 +49,6 @@ kind: ConfigMap
 metadata:
   name: k8s-app-configmap
   namespace: argocd-test
-  labels:
-    reloader: enabled
 data:
   .env.cm: |
     APP_NAME="Ciao mondo 11"
