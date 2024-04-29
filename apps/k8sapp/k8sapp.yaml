@@ -17,10 +17,10 @@ spec:
          containers:
             - name: k8s-app
               image: alangiacomin/k8s-app:1714241034
-              volumeMounts:
-              - name: env
-                mountPath: "/var/www/html"
-                readOnly: true
+              #volumeMounts:
+              #- name: env
+              #  mountPath: "/var/www/html"
+              #  readOnly: true
          volumes:
          - name: env
            configMap:
