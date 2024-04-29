@@ -18,11 +18,11 @@ spec:
             - name: k8s-app
               image: alangiacomin/k8s-app:1714241034
               volumeMounts:
-              - name: foo
-                mountPath: "/etc/foo"
+              - name: env
+                mountPath: "/var/www/html"
                 readOnly: true
          volumes:
-         - name: foo
+         - name: env
            configMap:
              name: k8s-app-configmap
 ---
@@ -49,5 +49,6 @@ metadata:
   name: k8s-app-configmap
   namespace: argocd-test
 data:
-  APP_NAME: "Ciao mondo"  
-  APP_ENV: production
+  .env: |
+    APP_NAME="Ciao mondo"  
+    APP_ENV=production
