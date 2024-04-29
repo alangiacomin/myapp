@@ -54,7 +54,7 @@ metadata:
   name: k8s-app-configmap
   namespace: argocd-test
   annotations:    
-    configmap-version: 1
+    configmap-version: "1"
 data:
   .env.cm: |
     APP_NAME:"Ciao mondo 21"
