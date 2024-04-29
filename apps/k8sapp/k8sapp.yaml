@@ -52,5 +52,5 @@ metadata:
   namespace: argocd-test
 data:
   .env: |
-    APP_NAME="Ciao mondo"  
+    APP_NAME="Ciao mondo 2"
     APP_ENV=local
