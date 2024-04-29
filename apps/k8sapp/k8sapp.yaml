@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
    name: k8s-app
    namespace: argocd-test
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
    replicas: 1
    revisionHistoryLimit: 1 # Default to 10 if not specified
