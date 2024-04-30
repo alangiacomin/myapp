@@ -16,7 +16,7 @@ metadata:
       {{ end }}
     vault.hashicorp.com/agent-limits-ephemeral: ""
     vault.hashicorp.com/secret-volume-path: /vault/secret/
-    vault.hashicorp.com/agent-inject-file-.env: database-config.txt
+    vault.hashicorp.com/agent-inject-file-database-config.txt: database-config.txt
     #vault.hashicorp.com/auth-path: auth/kubernetes/develop/us-west-2
     vault.hashicorp.com/role: k8s-app-sa
 spec:
@@ -43,7 +43,7 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-      terminationGracePeriodSeconds: 12
+      terminationGracePeriodSeconds: 9
       volumes:
         - name: k8s-app-configmap
           configMap:
