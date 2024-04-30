@@ -3,9 +3,7 @@ kind: ConfigMap
 metadata:
   name: k8s-app-cm-env
   namespace: argocd-test
-  labels:    
-    configmap-version: "2"
 data:
   .env.cm: |
-    APP_NAME="Ciao mondo 22"
+    APP_NAME="Ciao mondo 30"
     APP_ENV=production
