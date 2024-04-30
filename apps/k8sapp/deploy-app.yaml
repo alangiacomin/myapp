@@ -5,6 +5,9 @@ metadata:
   namespace: argocd-test
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
+    vault.hashicorp.com/agent-inject: 'true'
+    #vault.hashicorp.com/role: 'internal-app'
+    vault.hashicorp.com/agent-inject-secret-database-config.txt: 'cubbyhole/mypathtosecretdata'
 spec:
   replicas: 2
   revisionHistoryLimit: 1
