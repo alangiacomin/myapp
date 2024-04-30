@@ -6,12 +6,8 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
     vault.hashicorp.com/agent-inject: 'true'
-    #vault.hashicorp.com/role: 'internal-app'
+    vault.hashicorp.com/role: 'k8s-app-sa'
     vault.hashicorp.com/agent-inject-secret-database-config.txt: "cubbyhole/mypathtosecretdata"
-    vault.hashicorp.com/agent-inject-template-database-config.txt: |
-      {{- with secret "cubbyhole/mypathtosecretdata" -}}
-        postgresql://{{ .Data.data.mySecData }}:{{ .Data.data.mySecData }}@postgres:5432/wizard
-      {{- end -}}
 spec:
   replicas: 2
   revisionHistoryLimit: 1
