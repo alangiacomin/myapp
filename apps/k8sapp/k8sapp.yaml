@@ -57,5 +57,5 @@ metadata:
     configmap-version: "2"
 data:
   .env.cm: |
-    APP_NAME:"Ciao mondo 21"
-    APP_ENV:production
+    APP_NAME="Ciao mondo 21"
+    APP_ENV=production
