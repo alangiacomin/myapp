@@ -33,17 +33,3 @@ spec:
         - name: k8s-app-configmap
           configMap:
             name: k8s-app-cm-env
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: k8s-app-entrypoint
-  namespace: argocd-test
-spec:
-  type: LoadBalancer
-  selector:
-    bb: web
-  ports:
-    - port: 80
-      targetPort: 8123
