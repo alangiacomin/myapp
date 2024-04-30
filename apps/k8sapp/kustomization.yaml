@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: argocd-test
 
 resources:
-  - https://github.com/stakater/Reloader/deployments/kubernetes
+  - https://github.com/stakater/Reloader/deployments/kubernetes/kustomization.yaml
