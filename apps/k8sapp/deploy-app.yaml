@@ -27,6 +27,7 @@ spec:
       labels:
         bb: web
     spec:
+      serviceAccountName: k8s-app-sa
       containers:
         - name: k8s-app
           image: alangiacomin/k8s-app:1714425219
