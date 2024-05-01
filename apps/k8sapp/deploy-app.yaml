@@ -4,21 +4,7 @@ metadata:
   name: k8s-app
   namespace: argocd-test
   annotations:
-    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"    
-    vault.hashicorp.com/agent-init-first: "true"
-    vault.hashicorp.com/agent-inject: "true"
-    vault.hashicorp.com/agent-inject-secret-database-config.txt: cubbyhole/mypathtosecretdata
-    vault.hashicorp.com/agent-inject-template-database-config.txt: |
-      {{ with secret "kv/my-app/develop/us-west-2/develop-my-app" }}
-        {{ range $k, $v := .Data.data }}
-          {{ $k }} = "{{ $v }}"
-        {{ end }}
-      {{ end }}
-    vault.hashicorp.com/agent-limits-ephemeral: ""
-    vault.hashicorp.com/secret-volume-path: /vault/secret/
-    vault.hashicorp.com/agent-inject-file-database-config.txt: database-config.txt
-    #vault.hashicorp.com/auth-path: auth/kubernetes/develop/us-west-2
-    vault.hashicorp.com/role: k8s-app-sa
+    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
   replicas: 2
   revisionHistoryLimit: 1
@@ -34,7 +20,6 @@ spec:
       labels:
         bb: web
     spec:
-      serviceAccountName: k8s-app-sa
       containers:
         - name: k8s-app
           image: alangiacomin/k8s-app:1714425219
@@ -43,7 +28,7 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-      terminationGracePeriodSeconds: 9
+      terminationGracePeriodSeconds: 30
       volumes:
         - name: k8s-app-configmap
           configMap:
