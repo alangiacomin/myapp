@@ -6,4 +6,5 @@ metadata:
 data:
   .env.cm: |
     APP_NAME="Ciao mondo 31"
+    APP_URL=http://app.cobradev.net
     APP_ENV=production
