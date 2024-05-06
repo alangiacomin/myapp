@@ -9,7 +9,7 @@ data:
     APP_URL=http://app.cobradev.net
     APP_ENV=local
     APP_DEBUG=true
-    DB_CONNECTION=database
+    DB_CONNECTION=mysql
     DB_HOST=localhost
     DB_PORT=3306
     DB_DATABASE=zdhhezcz_k8s
