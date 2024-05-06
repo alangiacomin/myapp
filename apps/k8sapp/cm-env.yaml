@@ -5,6 +5,13 @@ metadata:
   namespace: argocd-test
 data:
   .env.cm: |
-    APP_NAME="Ciao mondo 31"
+    APP_NAME="Ciao mondo 32"
     APP_URL=http://app.cobradev.net
-    APP_ENV=production
+    APP_ENV=local
+    APP_DEBUG=true
+    DB_CONNECTION=database
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_DATABASE=zdhhezcz_k8s
+    DB_USERNAME=zdhhezcz_k8s_admin
+    DB_PASSWORD=VMQ4baF*TGi^$ze4
