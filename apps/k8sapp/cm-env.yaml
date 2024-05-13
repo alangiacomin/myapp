@@ -9,10 +9,10 @@ data:
     APP_URL=http://app.cobradev.net
     APP_ENV=production
     APP_DEBUG=false
-    DB_CONNECTION=sqlite
-    #DB_CONNECTION=mysql
-    #DB_HOST=localhost
-    #DB_PORT=3306
-    #DB_DATABASE=zdhhezcz_k8s
-    #DB_USERNAME=zdhhezcz_k8s_admin
-    #DB_PASSWORD=VMQ4baF*TGi^$ze4
+    #DB_CONNECTION=sqlite
+    DB_CONNECTION=mysql
+    DB_HOST=46.252.150.71
+    DB_PORT=3306
+    DB_DATABASE=zdhhezcz_k8s
+    DB_USERNAME=zdhhezcz_k8s_admin
+    DB_PASSWORD=VMQ4baF*TGi^$ze4
