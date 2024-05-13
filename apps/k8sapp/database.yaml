@@ -17,7 +17,7 @@ metadata:
   namespace: argocd-test
 subsets:
   - addresses:
-        - ip: database.cobradev.net
+        - ip: 46.252.150.71
     ports:
       - port: 3306
         name: mysql
