@@ -7,8 +7,8 @@ data:
   .env.cm: |
     APP_NAME="Ciao mondo 33"
     APP_URL=http://app.cobradev.net
-    APP_ENV=production
-    APP_DEBUG=false
+    APP_ENV=local
+    APP_DEBUG=true
     #DB_CONNECTION=sqlite
     DB_CONNECTION=mysql
     DB_HOST=46.252.150.71
