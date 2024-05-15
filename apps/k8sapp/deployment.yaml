@@ -28,7 +28,7 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
           configMap:
