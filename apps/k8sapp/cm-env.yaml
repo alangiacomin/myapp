@@ -42,21 +42,5 @@ spec:
   ports:
     - port: 3306
       targetPort: 3306
----
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: test-network-policy
-  namespace: myapp-test
-spec:
-  policyTypes:
-  - Egress
-  egress:
-  - to:
-    - ipBlock:
-        cidr: 46.252.150.71/32
-    #ports:
-    #- protocol: TCP
-    #  port: 5978
 
 
