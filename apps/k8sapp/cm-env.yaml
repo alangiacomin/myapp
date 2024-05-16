@@ -48,7 +48,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: test-network-policy
-  namespace: argocd-test
+  namespace: myapp-test
 spec:
   policyTypes:
   - Egress
