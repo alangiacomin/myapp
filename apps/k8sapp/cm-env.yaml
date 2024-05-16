@@ -56,8 +56,8 @@ spec:
   - to:
     - ipBlock:
         cidr: 46.252.150.71/32
-    ports:
-    - protocol: TCP
-      port: 5978
+    #ports:
+    #- protocol: TCP
+    #  port: 5978
 
 
