@@ -16,7 +16,8 @@ data:
     #DB_DATABASE=zdhhezcz_k8s
     #DB_USERNAME=zdhhezcz_k8s_admin
     #DB_PASSWORD=VMQ4baF*TGi^$ze4
-    NTS_HOST=46.252.150.71
+    #NTS_HOST=46.252.150.71
+    NTS_HOST=81.28.8.2
     NTS_PORT=80
     NTS_DATABASE=zdhhezcz_k8s
     NTS_USERNAME=zdhhezcz_k8s_admin
