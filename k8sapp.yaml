@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: k8sapp
-  namespace: myapp-test
+  namespace: argocd-test
 spec:
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: myapp-test
+    namespace: argocd-test
   project: default
   syncPolicy:
     automated:
