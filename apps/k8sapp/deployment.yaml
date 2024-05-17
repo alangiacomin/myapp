@@ -14,11 +14,11 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: myapp
+      bb: web
   template:
     metadata:
       labels:
-        app: myapp
+        bb: web
     spec:
       containers:
         - name: k8s-app
