@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: k8s-app-cm-env
-  namespace: myapp-test
+  namespace: argocd-test
 data:
   .env.cm: |
     APP_NAME="Hello world 1"
