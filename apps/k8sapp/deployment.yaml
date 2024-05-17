@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-app
-  namespace: argocd-test
+  namespace: myapp-test
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
@@ -14,11 +14,11 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: web
+      app: myapp
   template:
-    metadata:
-      labels:
-        bb: web
+#    metadata:
+#      labels:
+#        app: myapp
     spec:
       containers:
         - name: k8s-app
