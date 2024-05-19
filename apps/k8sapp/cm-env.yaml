@@ -17,7 +17,7 @@ data:
     DB_USERNAME=zdhhezcz_k8s_admin
     DB_PASSWORD=VMQ4baF*TGi^$ze4
     NTS_TEST=false
-    NTS_SERVER=true
+    NTS_SERVER=false
     #NTS_HOST=46.252.150.71
     NTS_HOST=46.252.150.71
     NTS_PORT=80
