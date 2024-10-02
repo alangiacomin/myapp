@@ -40,7 +40,7 @@ metadata:
   name: k8s-queue
   namespace: argocd-test
   annotations:
-    configmap.reloader.stakater.com/reload: "k8s-queue-cm-env"
+    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
   replicas: 1
   revisionHistoryLimit: 1
@@ -68,4 +68,4 @@ spec:
       volumes:
         - name: k8s-queue-configmap
           configMap:
-            name: k8s-queue-cm-env
+            name: k8s-app-cm-env
