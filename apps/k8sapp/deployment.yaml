@@ -28,15 +28,44 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-        - name: k8s-queue
-          image: alangiacomin/k8s-queue:1727904508
-          volumeMounts:
-            - name: k8s-app-configmap
-              mountPath: /var/www/html/.env.cm
-              subPath: .env.cm
-              readOnly: true
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
           configMap:
             name: k8s-app-cm-env
+--
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-queue
+  namespace: argocd-test
+  annotations:
+    configmap.reloader.stakater.com/reload: "k8s-queue-cm-env"
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 10%
+      maxSurge: 1
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+        - name: k8s-queue
+          image: alangiacomin/k8s-queue:1727904508
+          volumeMounts:
+            - name: k8s-queue-configmap
+              mountPath: /var/www/html/.env.cm
+              subPath: .env.cm
+              readOnly: true
+      terminationGracePeriodSeconds: 5
+      volumes:
+        - name: k8s-queue-configmap
+          configMap:
+            name: k8s-queue-cm-env
