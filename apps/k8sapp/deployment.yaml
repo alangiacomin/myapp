@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: k8s-app
-          image: alangiacomin/k8s-app:1729632650
+          image: alangiacomin/k8s-app:1729632889
           volumeMounts:
             - name: k8s-app-configmap
               mountPath: /var/www/html/.env.cm
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: k8s-queue
-          image: alangiacomin/k8s-queue:1729632650
+          image: alangiacomin/k8s-queue:1729632889
           volumeMounts:
             - name: k8s-queue-configmap
               mountPath: /var/www/html/.env.cm
