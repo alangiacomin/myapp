@@ -37,7 +37,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-queue
+  name: k8s-app-queue
   namespace: argocd-test
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
@@ -50,22 +50,22 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: queue
+      bb: app-queue
   template:
     metadata:
       labels:
-        bb: queue
+        bb: app-queue
     spec:
       containers:
-        - name: k8s-queue
-          image: alangiacomin/k8s-queue:1730041119
+        - name: k8s-app-queue
+          image: alangiacomin/k8s-app-queue:1730041119
           volumeMounts:
-            - name: k8s-queue-configmap
+            - name: k8s-app-queue-configmap
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
       terminationGracePeriodSeconds: 5
       volumes:
-        - name: k8s-queue-configmap
+        - name: k8s-app-queue-configmap
           configMap:
             name: k8s-app-cm-env
