@@ -36,6 +36,8 @@ data:
     NTS_USERNAME=zdhhezcz_k8s_admin
     NTS_PASSWORD=VMQ4baF*TGi^$ze4
     
+    REVERB_HOST="app1.cobradev.net"
+    
     #VITE_APP_NAME="${APP_NAME}"
     #VITE_APP_URL="${APP_URL}"
     
