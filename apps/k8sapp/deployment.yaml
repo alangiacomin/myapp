@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: k8s-app-queue
-          image: alangiacomin/k8s-app-queue:1736548136
+          image: alangiacomin/k8s-app:1736548136
           volumeMounts:
             - name: k8s-app-queue-configmap
               mountPath: /var/www/html/.env.cm
