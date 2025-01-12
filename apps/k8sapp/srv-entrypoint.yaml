@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-app-entrypoint
+  name: k8s-app-loadbalancer
   namespace: argocd-test
 spec:
   type: LoadBalancer
   selector:
-    bb: web
+    lbtype: external
   ports:
     - port: 80
       name: web
-      targetPort: 8123
+      targetPort: "8123-port"
     - port: 8119
       name: reverb
-      targetPort: 8119
+      targetPort: "8119-port"
       
