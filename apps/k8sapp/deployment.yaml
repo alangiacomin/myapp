@@ -32,9 +32,6 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: WEB
-          ports:
-          - containerPort: 8123
-            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
@@ -74,9 +71,6 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: QUEUE_DEFAULT
-          ports:
-          - containerPort: 8123
-            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-queue-configmap
@@ -116,9 +110,6 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: QUEUE_NOTIFICATION
-          ports:
-          - containerPort: 8123
-            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-notifications-configmap
@@ -201,9 +192,6 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: PULSE
-          ports:
-          - containerPort: 8123
-            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-pulse-configmap
