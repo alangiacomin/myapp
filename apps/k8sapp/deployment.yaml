@@ -28,10 +28,10 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/sh", "-c", "php artisan serve"]
+          #lifecycle:
+          #  postStart:
+          #    exec:
+          #      command: ["/bin/sh", "-c", "php artisan serve"]
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
