@@ -10,4 +10,6 @@ spec:
   ports:
     - port: 80
       targetPort: 8123
+    - port: 8119
+      targetPort: 8119
       
