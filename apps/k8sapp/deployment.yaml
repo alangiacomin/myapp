@@ -45,7 +45,7 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 1
   strategy:
     rollingUpdate:
@@ -84,7 +84,7 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 1
   strategy:
     rollingUpdate:
@@ -123,7 +123,7 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 1
   strategy:
     rollingUpdate:
@@ -162,7 +162,7 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 1
   strategy:
     rollingUpdate:
