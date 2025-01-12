@@ -141,11 +141,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: k8s-app-reverb
+      app: k8s-app
   template:
     metadata:
       labels:
-        app: k8s-app-reverb
+        app: k8s-app
+        app2: k8s-app-reverb
     spec:
       containers:
         - name: k8s-app-reverb
