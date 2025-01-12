@@ -67,8 +67,128 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
+          env:
+            - name: DEPLOY_PURPOSE
+              value: QUEUE_DEFAULT
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-queue-configmap
+          configMap:
+            name: k8s-app-cm-env
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-app-notifications
+  namespace: argocd-test
+  annotations:
+    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
+spec:
+  replicas: 0
+  revisionHistoryLimit: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 10%
+      maxSurge: 1
+  selector:
+    matchLabels:
+      bb: app-notifications
+  template:
+    metadata:
+      labels:
+        bb: app-notifications
+    spec:
+      containers:
+        - name: k8s-app-notifications
+          image: alangiacomin/k8s-app:1736695793
+          volumeMounts:
+            - name: k8s-app-notifications-configmap
+              mountPath: /var/www/html/.env.cm
+              subPath: .env.cm
+              readOnly: true
+          env:
+            - name: DEPLOY_PURPOSE
+              value: QUEUE_NOTIFICATION
+      terminationGracePeriodSeconds: 5
+      volumes:
+        - name: k8s-app-notifications-configmap
+          configMap:
+            name: k8s-app-cm-env
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-app-reverb
+  namespace: argocd-test
+  annotations:
+    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
+spec:
+  replicas: 0
+  revisionHistoryLimit: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 10%
+      maxSurge: 1
+  selector:
+    matchLabels:
+      bb: app-reverb
+  template:
+    metadata:
+      labels:
+        bb: app-reverb
+    spec:
+      containers:
+        - name: k8s-app-reverb
+          image: alangiacomin/k8s-app:1736695793
+          volumeMounts:
+            - name: k8s-app-reverb-configmap
+              mountPath: /var/www/html/.env.cm
+              subPath: .env.cm
+              readOnly: true
+          env:
+            - name: DEPLOY_PURPOSE
+              value: REVERB
+      terminationGracePeriodSeconds: 5
+      volumes:
+        - name: k8s-app-reverb-configmap
+          configMap:
+            name: k8s-app-cm-env
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-app-pulse
+  namespace: argocd-test
+  annotations:
+    configmap.reloader.stakater.com/reload: "k8s-app-cm-env"
+spec:
+  replicas: 0
+  revisionHistoryLimit: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 10%
+      maxSurge: 1
+  selector:
+    matchLabels:
+      bb: app-pulse
+  template:
+    metadata:
+      labels:
+        bb: app-pulse
+    spec:
+      containers:
+        - name: k8s-app-pulse
+          image: alangiacomin/k8s-app:1736695793
+          volumeMounts:
+            - name: k8s-app-pulse-configmap
+              mountPath: /var/www/html/.env.cm
+              subPath: .env.cm
+              readOnly: true
+          env:
+            - name: DEPLOY_PURPOSE
+              value: PULSE
+      terminationGracePeriodSeconds: 5
+      volumes:
+        - name: k8s-app-pulse-configmap
           configMap:
             name: k8s-app-cm-env
