@@ -11,7 +11,7 @@ spec:
     - port: 80
       name: web
       targetPort: 8123
-    - port: 8119
+    - port: 8080
       name: reverb
       targetPort: 8119
       
