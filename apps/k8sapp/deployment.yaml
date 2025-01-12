@@ -32,6 +32,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: WEB
+          ports:
+          - containerPort: 8123
+            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
