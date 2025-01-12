@@ -9,7 +9,9 @@ spec:
     bb: web
   ports:
     - port: 80
+      name: web
       targetPort: 8123
     - port: 8119
+      name: reverb
       targetPort: 8119
       
