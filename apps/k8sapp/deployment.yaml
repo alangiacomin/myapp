@@ -56,6 +56,9 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 1
+  selector:
+    matchLabels:
+      app: k8s-app-queue
   template:
     metadata:
       labels:
