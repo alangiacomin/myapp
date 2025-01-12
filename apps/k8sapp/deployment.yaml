@@ -56,14 +56,6 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 1
-  selector:
-    matchLabels:
-      lbtype: external
-  template:
-    metadata:
-      labels:
-        lbtype: external
-        app: k8s-app-queue
     spec:
       containers:
         - name: k8s-app-queue
@@ -99,14 +91,6 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 1
-  selector:
-    matchLabels:
-      lbtype: external
-  template:
-    metadata:
-      labels:
-        lbtype: external
-        app: k8s-app-notifications
     spec:
       containers:
         - name: k8s-app-notifications
@@ -142,14 +126,6 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 1
-  selector:
-    matchLabels:
-      lbtype: external
-  template:
-    metadata:
-      labels:
-        lbtype: external
-        app: k8s-app-reverb
     spec:
       containers:
         - name: k8s-app-reverb
@@ -185,14 +161,6 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 1
-  selector:
-    matchLabels:
-      lbtype: external
-  template:
-    metadata:
-      labels:
-        lbtype: external
-        app: k8s-app-pulse
     spec:
       containers:
         - name: k8s-app-pulse
