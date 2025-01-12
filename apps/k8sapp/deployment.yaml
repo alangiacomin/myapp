@@ -14,15 +14,17 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: web
+      lbtype: external
   template:
     metadata:
       labels:
-        bb: web
+        lbtype: external
+        app: k8s-app
     spec:
       containers:
         - name: k8s-app
           image: alangiacomin/k8s-app:1736713058
+          tty: true
           volumeMounts:
             - name: k8s-app-configmap
               mountPath: /var/www/html/.env.cm
@@ -31,6 +33,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: WEB
+          ports:
+          - containerPort: 8123
+            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
@@ -53,11 +58,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: app-queue
+      lbtype: external
   template:
     metadata:
       labels:
-        bb: app-queue
+        lbtype: external
+        app: k8s-app-queue
     spec:
       containers:
         - name: k8s-app-queue
@@ -70,6 +76,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: QUEUE_DEFAULT
+          ports:
+          - containerPort: 8123
+            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-queue-configmap
@@ -92,11 +101,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: app-notifications
+      lbtype: external
   template:
     metadata:
       labels:
-        bb: app-notifications
+        lbtype: external
+        app: k8s-app-notifications
     spec:
       containers:
         - name: k8s-app-notifications
@@ -109,6 +119,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: QUEUE_NOTIFICATION
+          ports:
+          - containerPort: 8123
+            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-notifications-configmap
@@ -131,11 +144,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: app-reverb
+      lbtype: external
   template:
     metadata:
       labels:
-        bb: app-reverb
+        lbtype: external
+        app: k8s-app-reverb
     spec:
       containers:
         - name: k8s-app-reverb
@@ -148,6 +162,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: REVERB
+          ports:
+          - containerPort: 8119
+            name: "8119-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-reverb-configmap
@@ -170,11 +187,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      bb: app-pulse
+      lbtype: external
   template:
     metadata:
       labels:
-        bb: app-pulse
+        lbtype: external
+        app: k8s-app-pulse
     spec:
       containers:
         - name: k8s-app-pulse
@@ -187,6 +205,9 @@ spec:
           env:
             - name: DEPLOY_PURPOSE
               value: PULSE
+          ports:
+          - containerPort: 8123
+            name: "8123-port"
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-pulse-configmap
