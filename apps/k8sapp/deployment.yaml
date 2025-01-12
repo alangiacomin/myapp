@@ -59,7 +59,6 @@ spec:
   template:
     metadata:
       labels:
-        lbtype: external
         app: k8s-app-queue
     spec:
       containers:
@@ -99,7 +98,6 @@ spec:
   template:
     metadata:
       labels:
-        lbtype: external
         app: k8s-app-notifications
     spec:
       containers:
@@ -182,7 +180,6 @@ spec:
   template:
     metadata:
       labels:
-        lbtype: external
         app: k8s-app-pulse
     spec:
       containers:
