@@ -28,10 +28,9 @@ spec:
               mountPath: /var/www/html/.env.cm
               subPath: .env.cm
               readOnly: true
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/sh", "-c", "php artisan serve --host=0.0.0.0 --port=8123"]
+          env:
+            - name: DEPLOY_PURPOSE
+              value: WEB
       terminationGracePeriodSeconds: 5
       volumes:
         - name: k8s-app-configmap
