@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: k8s-app
-          image: alangiacomin/k8s-app:1736712466
+          image: alangiacomin/k8s-app:1736713058
           volumeMounts:
             - name: k8s-app-configmap
               mountPath: /var/www/html/.env.cm
@@ -61,7 +61,7 @@ spec:
     spec:
       containers:
         - name: k8s-app-queue
-          image: alangiacomin/k8s-app:1736712466
+          image: alangiacomin/k8s-app:1736713058
           volumeMounts:
             - name: k8s-app-queue-configmap
               mountPath: /var/www/html/.env.cm
@@ -100,7 +100,7 @@ spec:
     spec:
       containers:
         - name: k8s-app-notifications
-          image: alangiacomin/k8s-app:1736712466
+          image: alangiacomin/k8s-app:1736713058
           volumeMounts:
             - name: k8s-app-notifications-configmap
               mountPath: /var/www/html/.env.cm
@@ -139,7 +139,7 @@ spec:
     spec:
       containers:
         - name: k8s-app-reverb
-          image: alangiacomin/k8s-app:1736712466
+          image: alangiacomin/k8s-app:1736713058
           volumeMounts:
             - name: k8s-app-reverb-configmap
               mountPath: /var/www/html/.env.cm
@@ -178,7 +178,7 @@ spec:
     spec:
       containers:
         - name: k8s-app-pulse
-          image: alangiacomin/k8s-app:1736712466
+          image: alangiacomin/k8s-app:1736713058
           volumeMounts:
             - name: k8s-app-pulse-configmap
               mountPath: /var/www/html/.env.cm
